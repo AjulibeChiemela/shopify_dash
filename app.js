@@ -180,10 +180,15 @@ function app() {
             "as done",
             "as not done"
           );
-          checkboxStatusArray[checkbokIndex].ariaLabel =
-            "Successfully marked clean your room as done";
+          checkboxStatusArray[checkbokIndex].ariaLabel.replace(
+            "as not done",
+            "as done"
+          );
 
           checkbox.classList.add(MARKED_AS_DONE);
+
+          setupGuideItemsArray[checkbokIndex].classList.remove("active");
+          setupGuideItemsArray[checkbokIndex + 1].classList.add("active");
 
           //update progress bar to add checked item
           progressBarText.innerHTML = checkedItemsNo + 1 + " / 5 completed";
@@ -213,8 +218,10 @@ function app() {
             "as done"
           );
 
-          checkboxStatusArray[checkbokIndex].ariaLabel =
-            "Successfully marked clean your room as not done";
+          checkboxStatusArray[checkbokIndex].ariaLabel.replace(
+            "as done",
+            "as not done"
+          );
 
           checkbox.classList.remove(MARKED_AS_DONE);
 
