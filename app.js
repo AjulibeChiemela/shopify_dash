@@ -28,8 +28,8 @@ function app() {
   const checkboxStatus = document.getElementsByClassName("setup-guide-status");
   const checkboxStatusArray = Array.from(checkboxStatus);
 
-  const progressBar = document.getElementById("progress-bar");
   const progressBarText = document.getElementById("number-completed");
+  const progressFill = document.getElementById("progress-fill");
 
   //handle closing the trial prompt
   const handleCloseCTA = () => {
@@ -188,6 +188,7 @@ function app() {
           //update progress bar to add checked item
           progressBarText.innerHTML = checkedItemsNo + 1 + " / 5 completed";
           checkedItemsNo++;
+          progressFill.style.width = (checkedItemsNo / 5) * 72 + "px";
         }, 1000);
       };
 
@@ -220,6 +221,7 @@ function app() {
           //update progress bar to remove unchecked item
           progressBarText.innerHTML = checkedItemsNo - 1 + " / 5 completed";
           checkedItemsNo--;
+          progressFill.style.width = (checkedItemsNo / 5) * 72 + "px";
         }, 1000);
       };
 

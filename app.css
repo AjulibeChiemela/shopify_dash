@@ -356,7 +356,7 @@ hr {
   line-height: 19.6px;
 }
 
-.setup-guide-closed p {
+.setup-guide-closed .setup-guide-closed-text {
   color: #303030;
   font-size: 13px;
   font-weight: 400;
@@ -364,15 +364,33 @@ hr {
   margin-block: 0.3rem 1rem;
 }
 
-.progressbar .number-completed {
-  color: var(--font-dark, var(--grey-g-200, #303030));
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-  /* Text-12/regular */
-  font-family: Inter;
+.progress-bar .number-completed {
+  color: #303030;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 130%; /* 15.6px */
+  line-height: 15.6px;
+}
+
+.progress-bar .progress {
+  width: 72px;
+  height: 4px;
+  border: none;
+  border-radius: 8px;
+  background: #e3e3e3;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #1a1a1a;
 }
 
 .setup-guide-open {
